@@ -41,3 +41,21 @@ test('configureSocket with no params', function (t) {
 
     t.end();
 });
+
+test('configureSocket with some params', function (t) {
+
+    // ARRANGE
+    t.plan(1);
+
+    class mySocket {
+        send(payload) {
+            t.pass();
+        }
+    }
+
+    // ACT
+    const newSocket = configureSocket(mySocket);
+    newSocket.onopen();
+
+    t.end();
+});

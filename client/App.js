@@ -5,28 +5,30 @@ import PropTypes from 'prop-types';
 import {configureSocket} from "./services/socketService";
 
 class App extends React.Component {
-    constructor(socket) {
+    constructor() {
         super();
-
         this.state = {
-            socket
+            socket:null
         }
     }
 
     componentDidMount() {
-        const {socket} = this.state;
-        if (socket) {
-            this.setState({socket: configureSocket(socket)});
+        if (window) {
+            this.setState({socket: configureSocket()});
         }
     }
 
     render() {
         const {socket} = this.state;
-
         return (
             [
                 <h2 key={1}>Hello world!</h2>,
-                <button key={2} onClick={() => socket.send('hello again server!')}>Socket away</button>
+                <button
+                    key={2}
+                    onClick={() => socket.send('hello again server!')}
+                >
+                    Socket away
+                </button>
             ]
         )
     }

@@ -1,4 +1,4 @@
-export const configureSocket = (socket, url = 'ws://localhost:8000') => {
+export const configureSocket = (socket = WebSocket, url = 'ws://localhost:8000') => {
     const webSocket = new socket(url);
 
     webSocket.onopen = () => {
