@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "fastify": "^0.30.2",
+    "fastify-static": "^0.3.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",
@@ -17,18 +18,22 @@
     ]
   },
   "devDependencies": {
+    "babel-loader": "^7.1.2",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0",
     "nodemon": "^1.12.1",
     "nyc": "^11.2.1",
     "prop-types": "^15.6.0",
-    "tape": "^4.8.0"
+    "tape": "^4.8.0",
+    "webpack": "^3.8.1"
   },
   "scripts": {
     "dev": "nodemon index.js",
     "start": "node index.js",
-    "test": "nyc tape -r babel-register ./**/*.spec.js"
+    "test": "nyc tape -r babel-register ./**/*.spec.js",
+    "build": "webpack"
   },
   "author": "",
   "license": "MIT"

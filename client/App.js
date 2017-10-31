@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 class App extends React.Component {
     componentDidMount() {
-        console.log('mounting! ', !!window);
+        console.log('mounting!');
         window && window.openWebSocketConnection();
     }
     render() {
