@@ -32,7 +32,7 @@
   "scripts": {
     "dev": "nodemon index.js",
     "start": "node index.js",
-    "test": "nyc tape -r babel-register ./**/*.spec.js",
+    "test": "nyc tape -r babel-register ./**/*.spec.js ./**/**/*.spec.js",
     "build": "webpack"
   },
   "author": "",
